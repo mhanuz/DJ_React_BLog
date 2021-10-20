@@ -10,3 +10,7 @@ Regular expression has been used to avoid unnatural data.
 Authorized and Unauthorized person access limit, 
 Crud operation
 
+Front-End: HTML,CSS,BootStrap, React Js, Axios 
+
+Back-End: Django, Reast API
+
