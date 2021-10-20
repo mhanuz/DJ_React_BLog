@@ -17,7 +17,6 @@ class PostView(viewsets.ModelViewSet):
     queryset = Post.objects.all().order_by('-id')
     serializer_class = PostSerializer
     
-  
    
 
 class ProfileView(views.APIView):
@@ -42,11 +41,11 @@ class UserDataUpdate(views.APIView):
     permission_classes=[IsAuthenticated, ]
     authentication_classes = [TokenAuthentication, ]
 
-    def post(self,request):
-        user=request.user # We can catch data manually
+    def post(self,request): # We wil update user data manually instead of using serializer class 
+        user=request.user # We can catch current user
         data=request.data   
 
-        user_obj=User.objects.get(username=user) # username built in flag
+        user_obj=User.objects.get(username=user) # this username is not built in flag this username is the property of User model 
         print(user_obj,"User object")
         user_obj.first_name=data['first_name']
         user_obj.last_name=data['last_name']

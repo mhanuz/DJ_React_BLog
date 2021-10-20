@@ -20,8 +20,10 @@ from django.conf.urls.static import static
 from rest_framework import routers
 from blog.views import PostView,ProfileView,RegisterView,UserDataUpdate,ProfileUpdate
 from rest_framework.authtoken.views import obtain_auth_token
+
 route = routers.DefaultRouter()
 route.register('',PostView,basename="postview")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(route.urls)),
